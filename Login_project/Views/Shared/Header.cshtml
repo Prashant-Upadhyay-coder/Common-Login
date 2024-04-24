@@ -1,0 +1,434 @@
+﻿ <style>
+     header {
+         background: var(--background);
+         padding: 9px;
+         width:100%;
+         position:fixed;
+         z-index:1000;
+         border-bottom: 1px solid #dcdfe4;
+     }
+     .title_list {
+         display: inline-block;
+         margin: 4px;
+         padding: 8px 9px 4px 8px;
+     }
+     .title_list i{
+       font-size:20px;
+     }
+         .title_list:hover{
+             border-radius: 50%;
+             background: #e8eaed;
+         }
+     .profile_div:hover {
+         border-radius: 50%;
+         background: #c7ccd3;
+     }
+     .nav_head {
+         display: flex;
+         justify-content: flex-end;
+     }
+     .ul_lists {
+         display:flex;
+         margin: 0;
+         padding: 0px 6px 0px 10px;
+         cursor:pointer;
+     }
+         .ul_lists li{
+            text-decoration:none;
+            list-style:none;
+         }
+     .profile_div {
+         padding: 2px 1px 2px 2px;
+     }
+         .profile_div img {
+             border-radius: 50%;
+         }
+     .header_menu_div {
+         width: 62px;
+         padding: 8px 2px 6px 22px;
+     }
+     .profile {
+         position: relative;
+         display: inline-block;
+     }
+
+     .popup {
+         display: none;
+         position: absolute;
+         background-color: #eaf1fb;
+         min-width: 160px;
+         box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+         z-index: 1;
+         margin-top: 53px;
+         overflow: hidden;
+         border-radius: 24px;
+         padding: 2px 0px 0px 8px;
+         box-shadow: 3px 2px 12px #ccc;
+         border: 1px solid #eaeaea;
+     }
+
+         .popup a {
+             color: black;
+           
+             text-decoration: none;
+             display: block;
+         }
+
+
+     .profile:hover .popup {
+         display: block;
+     }
+     .logo_content_popup {
+         background: white;
+         border-radius: 18px 18px 5px 5px;
+         padding: 12px 2px 12px 2px;
+     }
+     .logo_content_popup_02 {
+         background: white;
+         border-radius: 5px 5px 18px 18px;
+         padding: 2px 12px 2px 12px;
+     }
+     .Second_popup_logo_content{
+         border-radius: 5px 5px 18px 18px;
+         padding: 2px 12px 2px 12px;
+     }
+     .logos_icon {
+         display: flex;
+         justify-content: space-evenly;
+     }
+     .logos_item {
+         margin: 2px;
+         padding: 8px 15px 3px 15px;
+     }
+         .logos_item:hover {
+             background: #eaf1fb;
+             border-radius:14px;
+         }
+     /* Track */
+     ::-webkit-scrollbar {
+         width: 8px;
+     }
+
+     /* Handle */
+     ::-webkit-scrollbar-thumb {
+         background: #c7ccd3;
+         border-radius: 2px;
+     }
+
+         /* Handle on hover */
+         ::-webkit-scrollbar-thumb:hover {
+             background: #555;
+         }
+     .icon_title_popup {
+         font-size: 14px;
+         margin-left: 3px;
+         margin-bottom: 0px;
+     }
+     .user_summary{
+         display:flex;
+         justify-content:center;
+
+     }
+     .user_img {
+         border-radius: 50%;
+         overflow: hidden;
+     }
+     .user_title {
+         text-align: center;
+         font-size: 18px;
+     }
+     .btn-section {
+         background: white;
+         padding: 12px;
+         width: 150px;
+         border-radius: 30px 5px 5px 30px;
+         cursor: pointer
+     }
+     .button:hover {
+         background: #f9f9f9
+     }
+     .btn-section_02 {
+         background: white;
+         padding: 12px;
+         width: 150px;
+         border-radius: 5px 30px 30px 5px;
+         cursor:pointer
+     }
+ </style>
+
+ <header>
+     <div class="row">
+         @*<div class="header_menu_div">
+            <div id="toggleButton">
+                <i class="fa-solid fa-bars fs-4"></i>
+            </div>
+
+        </div>*@
+         <div class="col-sm-6">
+             <img src="~/images/logo2.png" height="40" />
+             <img src="~/images/Tectonas_logo.png" height="25" />
+         </div>
+         @*<div style="width:62%">*@
+         <div class="col-sm-6">
+             <nav class="nav_head">
+                 <ul class="ul_lists">
+                     <li class="title_list"><a><i class="fa-regular fa-circle-question"></i></a></li>
+                     <li class="title_list"><a><i class="fa-solid fa-gear " onclick="closepopup();"></i></a></li>
+                     <li class="title_list" onclick="toggleProfilePopup(1)"><a><i class="fa-solid fa-bars"></i></a></li>
+                     <li class="profile_li" style="margin-left:12px;">
+                         <a>
+                             <div class="profile_div" onclick="toggleProfilePopup(2)">
+                                 <img src="~/images/profiles/avatar-19.jpg" width="40" height="40" />
+                             </div>
+
+                         </a>
+
+                     </li>
+
+                 </ul>
+                 <div id="profilePopup" class="popup">
+                     <div id="pop_content_01" class="pop_content" style="overflow-y: scroll;   width: 300px;  height: 370px;">
+                         <div class="logo_content_popup">
+                             <div class="logos_icon" id="logos_container"></div>
+
+
+                             <div class="logos_icon">
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                             </div>
+                             <div class="logos_icon">
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+
+                             </div>
+                             <div class="logos_icon">
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                             </div>
+                             <div class="logos_icon">
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+
+                             </div>
+                             <div class="logos_icon">
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                             </div>
+                             <div class="logos_icon">
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+
+                             </div>
+                         </div>
+
+
+                         <div class="logo_content_popup_02 mt-1 mb-5">
+                             <div class="logos_icon">
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                             </div>
+                             <div class="logos_icon">
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                             </div>
+                             <div class="logos_icon">
+                                 <div class="logos_item">
+
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+                                 <div class="logos_item">
+                                     <img src="~/images/logo2.png" width="40" height="40" />
+                                     <p class="icon_title_popup">Home</p>
+                                 </div>
+
+                             </div>
+                         </div>
+
+                     </div>
+                     <div id="pop_content_02" class="pop_content" style="overflow-y: scroll; width:350px">
+                         <div class="Second_popup_logo_content">
+                             <div class="user_summary">
+                                 <div class="user_img">
+                                     <img src="~/images/profiles/avatar-19.jpg" width="70" height="70" />
+                                 </div>
+
+                             </div>
+                             <p class="user_title">Jones carlo</p>
+
+                             <div class="logout_container p-2 d-flex" style="justify-content:space-between">
+                                 <div class="btn-section button">
+                                     <p class="icon_title_popup"><i class="fa-solid fa-palette"></i> Change Theme</p>
+                                 </div>
+                                 <div class="btn-section_02 button">
+                                     <p class="icon_title_popup" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i>  Logout</p>
+                                 </div>
+                             </div>
+                         </div>
+
+
+                     </div>
+                 </div>
+             </nav>
+         </div>
+     </div>
+
+        
+
+ </header>
+<script>
+        var logos = [
+            {
+                href: "http://192.168.100.248:8787",
+                imgSrc: "/images/logo2.png",
+                imgWidth: 40,
+                imgHeight: 40,
+                title: "VAPT"
+            },
+            {
+                href: "http://192.168.100.253/Hrmsactivitygui",
+                imgSrc: "/images/logo2.png",
+                imgWidth: 40,
+                imgHeight: 40,
+                title: "HRMS"
+            },
+            {
+                href: "http://192.168.100.248:8787",
+                imgSrc: "/images/logo2.png",
+                imgWidth: 40,
+                imgHeight: 40,
+                title: "Home"
+            }
+        ];
+
+        // Get the container element
+        var container = document.getElementById("logos_container");
+
+        // Loop through the logos array and generate HTML dynamically
+        logos.forEach(function (logo) {
+            var logoItem = document.createElement("a");
+            logoItem.href = logo.href;
+
+            var logosItem = document.createElement("div ");
+            logosItem.classList.add("logos_item");
+
+            var img = document.createElement("img");
+            img.src = logo.imgSrc;
+            img.width = logo.imgWidth;
+            img.height = logo.imgHeight;
+
+            var title = document.createElement("p");
+            title.classList.add("icon_title_popup");
+            title.textContent = logo.title;
+
+            logosItem.appendChild(img);
+            logosItem.appendChild(title);
+            logoItem.appendChild(logosItem);
+            container.appendChild(logoItem);
+        });
+    
+    function toggleProfilePopup(e) {
+     
+        var popup = document.getElementById("profilePopup");
+        popup.style.display = "block";
+
+        if (e === 1){
+            $('#pop_content_02').hide();
+            $('#pop_content_01').show();
+          
+        }  else if(e === 2){
+            $('#pop_content_01').hide();
+            $('#pop_content_02').show();
+
+        }
+    }
+
+    function closepopup() {
+        // Implement your logout logic here
+        var popup = document.getElementById("profilePopup");
+        popup.style.display = "none";
+    }
+          
+</script>

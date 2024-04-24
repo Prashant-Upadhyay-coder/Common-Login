@@ -1,0 +1,69 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] </title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/DataTable/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    @*<link href="http://192.168.100.180:50/sidemenu/Sidemenu.css" rel="stylesheet" />*@
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/all.min.css" rel="stylesheet" />
+    <link href="~/css/newdatepicker.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/favicon.png">
+
+    @*<link href="~/css/datepicker.css" rel="stylesheet" />*@
+    @*<link href="~/css/DataTable/daterangepicker.css" rel="stylesheet" />*@
+    @*<link href="~/css/DataTable/bootstrap-datetimepicker.min.css" rel="stylesheet" />*@
+    <link href="~/DTPicker/jquery.datetimepicker.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    @*<script src="~/js/jquery-3.6.0.js"></script>*@
+    <script src="~/js/chart_new_script.js"></script>
+    <script src="~/js/tableControl.js"></script>
+    <script src="~/js/jquery-new.js"></script>
+    <script src="~/js/chart.min.js"></script>
+    <script src="~/js/Apexchart.js"></script>
+    <script src="~/js/datepickermomentnew.js"></script>
+    <script src="~/js/datepicker-new.min.js"></script>
+    @* CustomStyle *@
+    <link href="~/css/custom_style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+    <script src="~/js/sidemenu.js"></script>
+
+    <script src="~/js/DataTable/jquery.dataTables.min.js"></script>
+    <script src="~/js/DataTable/dataTables.bootstrap5.min.js"></script>
+
+    <script src="~/js/moment.min.js"></script>
+    @*<script src="~/js/DataTable/bootstrap-datetimepicker.min.js"></script>*@
+    @*<script src="~/js/DataTable/daterangepicker.min.js"></script>*@
+    @*<script src="~/js/month.js"></script>*@
+    <script src="~/DTPicker/jquery.datetimepicker.full.min.js"></script>
+    @*<script src="~/js/datepicker.all.js"></script>*@
+    <script src="~/js/jquery.slimscroll.min.js"></script>
+
+    <script src="~/js/jquery.validate.js"></script>
+    <script src="~/js/TectonaValidate.js"></script>
+
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+
+    <script src="~/js/DataTable/Bootstrap_class.js"></script>
+    <script src="~/js/app.js"></script>
+
+    <script>
+        $('.datepicker').datetimepicker({
+            timepicker: false,
+            format: "d/m/Y",
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

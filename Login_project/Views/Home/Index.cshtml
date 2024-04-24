@@ -1,0 +1,678 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Home/Home_Master_Page.cshtml";
+}
+<style>
+    :root {
+        --background: white !important;
+    }
+    body{
+        background:var(--background);
+    }
+    .content_body {
+        background: #f6f8fc;
+        padding: 12px 15px 12px 15px;
+        border-radius: 4px;
+    }
+    .product_list {
+        grid-template-rows: 1fr ;
+        grid-auto-rows: 0px ;
+        overflow: hidden;
+        display: grid;
+        justify-items: center;
+        column-gap: 0.75rem;
+        grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    }
+    .product_list_visibility {
+        grid-auto-rows:unset;
+    }
+    .product_info {
+        display: inline-flex;
+        flex-direction: column;
+        -webkit-box-align: center;
+        align-items: center;
+        width: 145px;
+        height: fit-content;
+        min-width: 0px;
+        text-align: center;
+        overflow: hidden;
+        text-decoration: none;
+        border-radius: 4px;
+        padding: 10px;
+    }
+        .product_info:hover {
+            text-decoration: none;
+            background: #091E420F;
+        }
+
+
+    .product_logo {
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 16px;
+        box-shadow: 0px 1px 1px #091E4240, 0px 0px 1px #091E424F;
+        background-color: #fff;
+        overflow: hidden;
+    }
+    .product_logo_Title {
+        margin: 0px;
+        color: black;
+        font: normal 600 0.75rem/1rem ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, system-ui, "Helvetica Neue", sans-serif
+    }
+    .product_logo_Title_alerts {
+        position:absolute;
+        top:0;
+        display:flex;
+       
+        margin: 0px;
+        color: black;
+        font: normal 600 0.75rem/1rem ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, system-ui, "Helvetica Neue", sans-serif
+    }
+    .product_logo_userName {
+        margin: 0px;
+        color: #626F86;
+        font-weight: 400;
+        min-height: 16px;
+        text-overflow: ellipsis;
+        width: calc(100% - 12px);
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .ul_list_products {
+        text-decoration: none;
+        list-style: none;
+        padding: 0px;
+        margin-top:12px;
+    }
+    .list_product {
+        border: 1px solid #dcdfe442;
+        padding: 10px;
+        margin: 3px 2px;
+        border-radius: 4px;
+        box-shadow: 0px 1px 2px -1px;
+    }
+    .notify-list{
+        padding:10px;
+        background:white;
+        margin-top:35px;
+    }
+    .product_Title_alert {
+        margin: 12px 2px 2px 4px;
+
+    }
+    .product_logo_alerts {
+        padding: 4px;
+        border-radius:4px;
+        background: white;
+        box-shadow: 0px 1px 3px #dcdfe4;
+    }
+    .notify_main_div {
+        position: relative;
+        background: #f6f8fc;
+        border: 1px solid #091e4205;
+        /*height: 59px;
+        overflow: hidden;
+        transition: height 0.9s;*/
+    }
+        .notify_main_div:hover {
+            background: #091E420F;
+            /*height:100%;
+            transition: height 0.9s;*/
+        }
+    .panel ,p{
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .count_notify {
+        position: absolute;
+        top: 24px;
+        left: 88%;
+    }
+    .count_number {
+        background: #ffffff;
+        padding: 5px;
+        border-radius: 50%;
+        box-shadow: 0px 1px 3px #dcdfe4;
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+</style>
+<body >
+    <div class="page-wrapper" style="min-height: 574px; " onmouseover="closepopup();">
+        <div class="container-fluid p-0">
+            <main  style="padding: 0px 40px 15px 40px !important ;">
+                <div style="padding :0px 40px 15px 40px !important ; margin-top:5rem">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <h5 class="mb-1">Shift to </h5>
+                        </div>
+                        <div class="col-lg-6 col-md-6  d-flex justify-content-end">
+                           <a href="#" onclick="visiable_product_list();"  id="visible_text" style="font-weight:600">Show All Product</a>
+                        </div>
+                    </div>
+                   
+                    <div class="content_body">
+                        <div class="product_list" id="pro_list">
+                            <a class="product_info" href="http://192.168.100.248:8787">
+                                <div class="product_logo">
+                                    <img src="~/images/logo2.png" width="45" height="45" />
+                                </div>
+                                <p class="product_logo_Title">VAPT</p>
+                                <p class="product_logo_userName">Admin</p>
+                            </a>
+
+                            <a class="product_info">
+                                <div class="product_logo">
+                                    <img src="~/images/logo2.png" width="45" height="45" />
+                                </div>
+                                <p class="product_logo_Title">NockDesk</p>
+                                <p class="product_logo_userName">Service Manager</p>
+                            </a>
+                            <a class="product_info">
+                                <div class="product_logo">
+                                    <img src="~/images/logo2.png" width="45" height="45" />
+                                </div>
+                                <p class="product_logo_Title">NockDesk</p>
+                                <p class="product_logo_userName">User</p>
+                            </a>
+                            <a class="product_info">
+                                <div class="product_logo">
+                                    <img src="~/images/logo2.png" width="45" height="45" />
+                                </div>
+                                <p class="product_logo_Title">Attendance</p>
+                                <p class="product_logo_userName">Admin</p>
+                            </a>
+                            <a class="product_info">
+                                <div class="product_logo">
+                                    <img src="~/images/logo2.png" width="45" height="45" />
+                                </div>
+                                <p class="product_logo_Title">Attendance</p>
+                                <p class="product_logo_userName">User</p>
+                            </a>
+                            <a class="product_info">
+                                <div class="product_logo">
+                                    <img src="~/images/logo2.png" width="45" height="45" />
+                                </div>
+                                <p class="product_logo_Title">CSAT</p>
+                                <p class="product_logo_userName">sapan.shah</p>
+                            </a>
+                            <a class="product_info">
+                                <div class="product_logo">
+                                    <img src="~/images/logo2.png" width="45" height="45" />
+                                </div>
+                                <p class="product_logo_Title">PATCH</p>
+                                <p class="product_logo_userName">Admin</p>
+                            </a>
+                            <a class="product_info">
+                                <div class="product_logo">
+                                    <img src="~/images/logo2.png" width="45" height="45" />
+                                </div>
+                                <p class="product_logo_Title">PATCH</p>
+                                <p class="product_logo_userName">User</p>
+                            </a>
+
+                        </div>
+                    </div>
+                    <main class="notify mt-4">
+                        <h5 class="mb-2"><i class="fa-solid fa-rocket" style="color:#7c98f9"></i> Quick Notify</h5>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <div class="notify_main_div">
+                                    <div class="notify-list">
+                                        <div class="count_notify"><span class="count_number">05</span></div>
+                                        <div class="product_logo_Title_alerts fs-6 p-2">
+                                            <div class="product_logo_alerts">
+                                                <img src="~/images/logo2.png" width="35" height="35" />
+                                            </div>
+                                            <div class="product_Title_alert">VAPT</div>
+                                        </div>
+                                        <ul class="ul_list_products">
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <p class="m-0">Gross Vulnerability</p>
+                                                        </div>
+                                                        <div class="col-sm-3 text-end">
+                                                            <p class="m-0"><i class="fa-solid fa-arrow-up fs-7" style="color:red"></i>10%</p>
+                                                        </div>
+                                                        <div class="col-sm-3 text-end ">
+                                                            <p class="m-0">High</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <p class="m-0">Last Scan</p>
+                                                        </div>
+                                                        @*<div class="col-sm-3 text-end">
+                                                            <p class="m-0"><i class="fa-solid fa-arrow-down fs-7" style="color:darkseagreen"></i>10%</p>
+                                                        </div>*@
+                                                        <div class="col-sm-6 text-end ">
+                                                            <p class="m-0">2h ago</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <p class="m-0">Gross Vulnerability</p>
+                                                        </div>
+                                                        <div class="col-sm-3 text-end">
+                                                            <p class="m-0"><i class="fa-solid fa-arrow-right fs-7" style="color:dodgerblue"></i> 5%</p>
+                                                        </div>
+                                                        <div class="col-sm-3 text-end ">
+                                                            <p class="m-0">Medium</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <p class="m-0">SSL/TLS:Vulnerability</p>
+                                                        </div>
+                                                        <div class="col-sm-3 text-end">
+                                                            <p class="m-0"><i class="fa-solid fa-arrow-down fs-7"style="color:darkseagreen"></i>10%</p>
+                                                        </div>
+                                                        <div class="col-sm-3 text-end ">
+                                                            <p class="m-0">Low</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <p class="m-0">Gross Vulnerability</p>
+                                                        </div>
+                                                        <div class="col-sm-3 text-end">
+                                                            <p class="m-0"><i class="fa-solid fa-arrow-up fs-7" style="color:red"></i>10%</p>
+                                                        </div>
+                                                        <div class="col-sm-3 text-end ">
+                                                            <p class="m-0">High</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <div class="notify_main_div">
+                                    <div class="notify-list">
+                                        <div class="count_notify"><span class="count_number">05</span></div>
+                                        <div class="product_logo_Title_alerts fs-6 p-2">
+                                            <div class="product_logo_alerts">
+                                                <i class="fa-solid fa-n fs-4 m-1"></i>
+                                            </div>
+                                            <div class="product_Title_alert">NockDesk</div>
+                                        </div>
+                                        <ul class="ul_list_products">
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <p class="m-0">Ticket Assign</p>
+
+                                                        </div>
+                                                        <div class="col-sm-6 text-end">
+                                                            <p class="m-0">2h ago</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <div class="notify_main_div">
+                                    <div class="notify-list">
+                                        <div class="count_notify"><span class="count_number">05</span></div>
+                                        <div class="product_logo_Title_alerts fs-6 p-2">
+                                            <div class="product_logo_alerts">
+                                                <img src="~/images/logo2.png" width="35" height="35" />
+                                            </div>
+                                            <div class="product_Title_alert">CSAT</div>
+                                        </div>
+                                        <ul class="ul_list_products">
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <p class="m-0">Vulnerabilty</p>
+                                                        </div>
+                                                        <div class="col-sm-6 text-end">
+                                                            <p class="m-0">2h ago</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <div class="notify_main_div">
+                                    <div class="notify-list">
+                                        <div class="count_notify"><span class="count_number">05</span></div>
+                                        <div class="product_logo_Title_alerts fs-6 p-2">
+                                            <div class="product_logo_alerts">
+                                                <img src="~/images/logo2.png" width="35" height="35" />
+                                            </div>
+                                            <div class="product_Title_alert">Attendance</div>
+                                        </div>
+                                        <ul class="ul_list_products">
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <p class="m-0">Vulnerabilty</p>
+                                                        </div>
+                                                        <div class="col-sm-6 text-end">
+                                                            <p class="m-0">2h ago</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <div class="notify_main_div">
+                                    <div class="notify-list">
+                                        <div class="count_notify"><span class="count_number">05</span></div>
+                                        <div class="product_logo_Title_alerts fs-6 p-2">
+                                            <div class="product_logo_alerts">
+                                                <i class="fa-solid fa-n fs-4 m-1"></i>
+                                            </div>
+                                            <div class="product_Title_alert">NockDesk</div>
+                                        </div>
+                                        <ul class="ul_list_products">
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <p class="m-0">Ticket Assign</p>
+
+                                                        </div>
+                                                        <div class="col-sm-6 text-end">
+                                                            <p class="m-0">2h ago</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Ticket Closed
+                                                        </div>
+                                                        <div class="col-sm-6 text-end">
+                                                            <p class="m-0">8h ago</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                <div class="notify_main_div">
+                                    <div class="notify-list">
+                                        <div class="count_notify"><span class="count_number">05</span></div>
+                                        <div class="product_logo_Title_alerts fs-6 p-2">
+                                            <div class="product_logo_alerts">
+                                                <i class="fa-solid fa-c fs-4 m-1"></i>
+                                            </div>
+                                            <div class="product_Title_alert">CSAT</div>
+                                        </div>
+                                        <ul class="ul_list_products">
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <p class="m-0">Vulnerabilty</p>
+                                                        </div>
+                                                        <div class="col-sm-6 text-end">
+                                                            <p class="m-0">2h ago</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list_product">
+                                                <div class="panel">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            Vulneribility
+                                                        </div>
+                                                        <div class="col-sm-6"></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </main>
+
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+<script>
+    function visiable_product_list() {
+        let v = $('#pro_list')
+        v.toggleClass('product_list_visibility')
+        toggleName()
+    }
+    function toggleName() {
+        let text = document.getElementById("visible_text").innerHTML
+        let result = text === "Back" ? "Show all Products" : "Back"
+        document.getElementById("visible_text").innerHTML = result;
+    }
+   
+</script>

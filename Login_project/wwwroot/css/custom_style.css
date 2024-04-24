@@ -1,0 +1,94 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*//home*/
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/*login_page*/
+.Login_header {
+    background-color: white;
+    padding: 5px 12px;
+    display: flex;
+    width: 100%;
+}
+.Login_header .Image_Div {
+        display: inline-block;
+        vertical-align: middle; /* Optional: Align vertically if needed */
+    }
+.Logo_Title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #102a83;
+}
+.Title_Div {
+    margin-top: 8px;
+}
+.Login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 360px;
+    margin-top: 8%;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    width: 370px;
+    border-radius: 5px;
+}
+   
+.form input {
+        outline: 0;
+        background: white;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 16px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+.form select {
+        outline: 0;
+        
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 16px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+.form button {
+        width: 100%;
+    }
+.btn-primary_2 {
+    background-color: #102a83;
+    color: white;
+}
+.btn-primary_2:hover {
+        background-color: #102b83de;
+        color: white !important;
+    }
+.password-container {
+    position: relative;
+}
+.password-toggle {
+    position: absolute;
+    top: 40%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}

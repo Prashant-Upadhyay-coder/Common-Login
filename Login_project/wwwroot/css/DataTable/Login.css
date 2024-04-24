@@ -1,0 +1,162 @@
+﻿.background-radial-gradient {
+    background-color: #223b50;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.card-extra {
+    box-shadow: 0 0 4px transparent;
+    border-radius: 8px;
+    width: 22rem;
+    height: 26rem;
+    margin: 20px 0;
+}
+
+.card {
+    border: transparent !important ;
+    background-color: transparent;
+}
+
+#captchavalue {
+    font-family: "Mom's Typewriter", monospace;
+    font-size: 22px;
+    letter-spacing: 18px;
+    text-align: center;
+    color: #fff;
+    background-color: transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 1px solid #fff;
+    padding: 2px 6px;
+}
+
+input[type=text],
+input[type=password],
+.form-select {
+    border: 1px solid lightgray;
+}
+
+.form-control:focus {
+    border: 1px solid #fff;
+    box-shadow: 0 0 2px #D3D3D3;
+}
+
+.form-select:focus {
+    border: 1px solid #fff;
+    box-shadow: 0 0 5px 2.5px #D3D3D3;
+}
+
+.form-select:focus {
+    box-shadow: none;
+}
+
+.icon {
+    min-width: 30px;
+    margin: 11px 00px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 12px;
+}
+
+.container-fluid {
+    width: 100%
+}
+
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
+
+input::placeholder {
+    font-size: 15px !important;
+}
+
+.form-select {
+    font-size: 15px !important;
+}
+
+.card-body h2 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+#submit {
+    background-color: #cdcdcd;
+    border: 1px solid #cdcdcd;
+    display: block;
+    width: 100%;
+    color: #000;
+    font-weight: 600;
+}
+
+    #submit:focus {
+        box-shadow: transparent;
+    }
+
+#login-row {
+    background-color: #2d4456;
+    box-shadow: 0 0 5px #1e0d0da6;
+    border-radius: 8px;
+    padding: 10px 30px;
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.login-cover-img img {
+    width: 100%;
+    display: inline-block;
+}
+
+.login-cover-img {
+    display: inline-block;
+    width: 100%;
+}
+
+input {
+    background-color: transparent !important;
+    border: 1px solid #ffff;
+    color: #ffff !important;
+}
+
+select#form3Example4 {
+    background: #2d4456;
+    color: gray;
+}
+
+    select#form3Example4::before {
+        content: "f078";
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-family: Fontawesome;
+        font-size: 20px;
+    }
+
+.refresher {
+    position: absolute;
+    top: 1px;
+    right: 13px;
+    background: #d9d9d9;
+    padding: 11px 0;
+    border-radius: 2px;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+select::-ms-expand {
+    fill: #fff;
+}
+
+input::placeholder {
+    color: gray !important;
+}
+
+i.fa-solid.fa-chevron-down {
+    position: absolute;
+    top: 50%;
+    right: 17px;
+    color: #fff;
+    transform: translateY(-50%);
+}

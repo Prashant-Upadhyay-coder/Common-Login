@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<DataSet>
+  <Config>
+    <OBBWSIP>192.168.100.135</OBBWSIP>
+    <OBBWSPort>8888</OBBWSPort>
+    <EMPWSIP>192.168.100.135</EMPWSIP>
+    <EMPWSPort>8888</EMPWSPort>
+    <!-- Commsys Microservice config start-->
+      <UserFirstLevelMS>https://192.168.100.139</UserFirstLevelMS>
+      <OrgFirstLevelMS>https://192.168.100.139</OrgFirstLevelMS>
+    <!-- Commsys Microservice config end-->
+    <!-- Stack Microservice config start-->
+      <SecLevelMS>https://localhost:5011</SecLevelMS>
+      <EntityFirstLevelMS>https://localhost:5001</EntityFirstLevelMS>
+      <RelationFirstLevelMS>https://localhost:5003</RelationFirstLevelMS>
+      <CalendarFirstLevelMS>https://localhost:5005</CalendarFirstLevelMS>
+      <HierarchyFirstLevelMS>https://localhost:5007</HierarchyFirstLevelMS>
+    <!-- Stack Microservice config end-->           
+  </Config>
+</DataSet>

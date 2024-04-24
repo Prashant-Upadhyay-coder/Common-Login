@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Login/LoginMasterPage.cshtml";
+}
+
+<body >
+    <section class="Login">
+        <div class="form">
+            @*<div class="Image_Div ">
+                <img src="~/images/logo2.png" width="50" height="50">
+            </div>*@
+            <div>
+                <h4 class="mt-1" style="font-size: 28px;">LogIn</h4>
+            </div>
+            <form class="register-form" >
+                <input type="text" placeholder="Enter a Username" />
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="Enter a password">
+                    <span class="password-toggle" onclick="togglePasswordVisibility()">
+                        <i id="eye-icon" class="fas fa-eye"></i>
+                    </span>
+                </div>
+                <select class="form-select">
+                    <option selected>Select Application</option>
+                    <option value="1">Dashbaord</option>
+                    <option value="2">VAPT</option>
+                    <option value="3">PATCH</option>
+                    <option value="4">CSAT</option>
+                </select>
+                <select class="form-select">
+                    <option selected>Select RollType</option>
+                    <option value="1">Admin</option>
+                    <option value="2">Manger</option>
+                    <option value="3">User</option>
+                </select>
+                <button type="button" class="btn btn-primary_2" onclick="redirectoHome()">login</button>
+            </form>
+        </div>
+    </section>
+    <script>
+    function togglePasswordVisibility() {
+        var passwordField = document.getElementById("password");
+        var eyeIcon = document.getElementById("eye-icon");
+
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            eyeIcon.classList.remove("fa-eye");
+            eyeIcon.classList.add("fa-eye-slash");
+        } else {
+            passwordField.type = "password";
+            eyeIcon.classList.remove("fa-eye-slash");
+            eyeIcon.classList.add("fa-eye");
+        }
+        }
+
+        function redirectoHome() {
+         window.location.href = '@Url.Content("~/Home/Index")';
+        }
+    </script>
+
+</body>
